@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/:27017';
+const uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/:27017';
 
 const conn = mongoose.createConnection(uristring, { useNewUrlParser: true }, (err, res) => {
   if (err) {
