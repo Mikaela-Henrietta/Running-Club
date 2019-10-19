@@ -4,11 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
-const styles = () => ({
+const styles = (theme) => ({
   root0: {
     height: '100vh',
     backgroundImage: 'url(images/kuva.jpg)',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   },
   root: {
     display: 'flex',
@@ -19,8 +20,17 @@ const styles = () => ({
   h1: {
     marginTop: 100,
     color: '#366453',
-    fontSize: 60,
-    fontWeight: 2,
+    fontSize: 40,
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 50,
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: 70,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 100,
+    },
+    fontWeight: 300,
   },
   links: {
     display: 'flex',
