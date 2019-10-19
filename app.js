@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const hostname = '0.0.0.0';
-const port = 443;
+const port = process.env.PORT || 8080;
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const expressSanitizer = require('express-sanitizer');
