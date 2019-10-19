@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import MenuIcon from '@material-ui/icons/Menu';
 import ArrowIcon from '@material-ui/icons/KeyboardArrowLeft';
 import { Link } from 'react-router-dom';
+import SideBar from './SideBar.js';
 
 
 const styles = theme => ({
@@ -32,27 +33,32 @@ const styles = theme => ({
 class Header extends Component {
    constructor(props) {
     super(props);
+     this.state = {
+      mobileOpen: false,
+    }; 
   } 
-  
+ openSideBar = () => {
+    this.setState({ mobileOpen: true})
+  }; 
   render() {
-    const { classes, displayArrow, backAction, linkTo, title, position = 'fixed', className, action = () => {} } = this.props;
+    const { classes, displayArrow, linkTo, title, position = 'fixed', className, action = () => {console.log('clicks')} } = this.props;
     
     function getNavbar() {
       if (displayArrow ) {
-        if (backAction){
+         /* if (backAction){
           return (
             <IconButton onClick = {backAction} className={classes.menuButton} color="inherit" aria-label="Menu">
               <ArrowIcon />
             </IconButton>
           )
-        } else {
+        } else {  */
         return (
           <IconButton component={Link} to={linkTo || ''} className={classes.menuButton} color="inherit" aria-label="Menu">
             <ArrowIcon />
           </IconButton>
         )
         }
-      }
+      //  } 
       return (
         <IconButton className={classes.menuButton + ' ' + classes.hamburger} color="inherit" aria-label="Menu" onClick = {action}>
           <MenuIcon />

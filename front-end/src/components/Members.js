@@ -37,6 +37,8 @@ const styles = theme => ({
     alignItems: 'center',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
     maxWidth: 300,
+    minWidth: 250,
+    marginRight: 50,
   },
   form: {
     width: '100%', 
@@ -60,6 +62,8 @@ const styles = theme => ({
   paperDiv: {
     display: 'flex',
     justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   infoButton: {
     color: '#421e1c',
@@ -120,12 +124,12 @@ class Members extends Component {
         return fee.month === thisMonth
       })
       if (hasPayd) {
-        return (<h3 style={{color: 'green'}}>User has payed this month fee</h3>)
+        return (<h5 style={{color: 'green'}}>User has payed this month fee</h5>)
       } else {
-        return (<h3 style={{color: 'red'}}>User has not payed this month fee!</h3>)
+        return (<h5 style={{color: 'red'}}>User has not payed this month fee!</h5>)
       }
     } else {
-      return (<h3 style={{color: 'red'}}>User has not payed this month fee!</h3>)
+      return (<h5 style={{color: 'red'}}>User has not payed this month fee!</h5>)
     }
   }
 
@@ -176,7 +180,7 @@ class Members extends Component {
       if (this.props.currentUser.role === 'admin') {
         return (
           <div>
-            <h2>{user.username}</h2>
+            <h4>{user.username}</h4>
             {this.userHasPayedMonthlyFee(user)}
             <Button
               type="button"
@@ -209,7 +213,7 @@ class Members extends Component {
       return (
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h5">
-            Add new User
+            New user
           </Typography>
           <form className={classes.form}
               onSubmit={this.onNewUser}>
@@ -249,16 +253,16 @@ class Members extends Component {
           <div className={classes.root2}>
             <div className={classes.paperDiv}>
               <Paper className={classes.paper}>
-                Members of the Runners Club
+                <Typography component='h5' variant='h5'>Members </Typography>
                 {this.props.users.map((user) => (
                   <div key={user._id}>
                     {this.editUserView(user)}
                   </div>
                 ))}
               </Paper>
+              {this.renderAddNewUSerView()}
             </div>
           </div>
-          {this.renderAddNewUSerView()}
         </div>
       </div>
     );

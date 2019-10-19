@@ -75,7 +75,7 @@ const styles = theme => ({
   avatar: {
     marginLeft:16,
     marginBottom: 16,
-  }
+  },
 });
 
 class SideBar extends React.Component {
@@ -100,14 +100,12 @@ class SideBar extends React.Component {
     }]
     this.state = {
       redirect: false,
+      mobileOpen: false,
     };
   }
-  state = {
-    mobileOpen: false,
-  };
 
    handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    this.setState(state => ({ mobileOpen: !this.state.mobileOpen }));
   }; 
 
   filteredNavigationLinks(location) {
@@ -128,7 +126,7 @@ class SideBar extends React.Component {
         <Link to={""} onClick={this.logout}>
           <ListItem button>
             <ListItemIcon><TrendingFlatIcon/></ListItemIcon>
-            <ListItemText primary={"logout"} />
+            <ListItemText  primary={"logout"} />
           </ListItem>
         </Link>
       )
@@ -191,7 +189,7 @@ class SideBar extends React.Component {
               container={this.props.container}
               variant="temporary"
               anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-              open={this.state.handleDrawerToggle}
+              open={this.state.mobileOpen}
               onClose={this.handleDrawerToggle}
               classes={{
                 paper: classes.drawerPaper,

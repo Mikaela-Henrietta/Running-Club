@@ -34,6 +34,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   appBar: {
     marginLeft: drawerWidth,
@@ -49,6 +50,11 @@ const styles = theme => ({
   media: {
     height: 140,
   },
+  heading: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  }
 })
 
 class Plans extends Component {
@@ -86,7 +92,7 @@ class Plans extends Component {
          </SideBar> 
         </div>
         <div className={classes.root2}>
-        <Typography style={{marginLeft:90}} component='h6' variant='h5'>Choose your training plan</Typography>
+        <Typography className={classes.heading}  component='h6' variant='h5'>Training plans</Typography>
           <div className={classes.paperDiv}>
            {tileData.map((tile, index) => ( 
           <Card className={classes.card}>

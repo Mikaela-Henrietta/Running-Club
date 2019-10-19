@@ -147,7 +147,7 @@ class Profile extends Component {
       } else {
         return (
           <div className={classes.container} >
-            <h3 style={{color: 'red'}}>Pay your monthly fee!</h3>
+            <h4 style={{color: 'red'}}>Remember monthly fee!</h4>
             <TextField
                 id="outlined-name"
                 label="Credit card number (1234-1234)"
@@ -170,7 +170,7 @@ class Profile extends Component {
       <div className={classes.root}>
         <div>
            <SideBar location={this.props.location}> 
-            <Header  className={classes.appBar} title='Edit Profile'/>
+            <Header  className={classes.appBar} title='Profile'/>
          </SideBar> 
         </div>
         <div className={classes.root2}>
