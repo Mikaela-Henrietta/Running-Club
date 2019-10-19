@@ -22,6 +22,6 @@
     "start": "concurrently --kill-others-on-fail \"npm run serve\" \"cd front-end && npm run start\"",
     "installFrontEnd": "cd front-end && npm install && cd .. && npm install",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front-end && npm run build --prefix front-end",
-    "production": "npm run installFrontEnd && cd front-end && npm run build && cd .. && npm run serve"
+    "production": "cd front-end && npm run build && cd .. && npm run serve"
   }
 }

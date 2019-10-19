@@ -57,8 +57,7 @@ let controller = {
             const payload = { username: user.username, role: user.role || 'user', _id: user._id };
             const token = jwt.sign(payload, secret, { expiresIn: '1h' });
             res.cookie('token', token, { httpOnly: true });
-              res.json({success: true, user})
-            
+            res.json({success: true, user})
           }
         })
       }

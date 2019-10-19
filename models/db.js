@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
-const conn = mongoose.createConnection('mongodb://localhost/:27017',{ useNewUrlParser: true });
+const uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/:27017';
+
+const conn = mongoose.createConnection(uristring, { useNewUrlParser: true }, (err, res) => {
+  if (err) {
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + uristring);
+  }
+});
 
 const userSchema = new mongoose.Schema({ 
   username: { type: String, required: true, unique: true },
