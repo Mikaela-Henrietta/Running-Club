@@ -20,6 +20,7 @@
   "scripts": {
     "serve": "nodemon app.js",
     "start": "concurrently --kill-others-on-fail \"npm run serve\" \"cd front-end && npm run start\"",
-    "production": "cd front-end && npm run build && cd .. && npm run serve"
+    "installFrontEnd": "cd front-end && npm install && cd .. && npm install",
+    "production": "npm run installFrontEnd && cd front-end && npm run build && cd .. && npm run serve"
   }
 }
