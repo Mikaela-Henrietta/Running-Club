@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const hbs = require('express-hbs');
 const hostname = '0.0.0.0';
 const port = 8080;
 const bodyParser = require('body-parser')
@@ -24,12 +23,4 @@ seedUsers()
 const appRoutes = require('./router.js')(app)
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
-});
-
-hbs.registerHelper('ifvalue', function (conditional, options) {
-  if (options.hash.value === conditional) {
-    return options.fn(this)
-  } else {
-    return options.inverse(this);
-  }
 });
