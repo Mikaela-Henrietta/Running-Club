@@ -24,6 +24,7 @@ const styles = theme => ({
     justifyContent: 'center',
     flexDirection: 'row',
     marginTop: 100,
+    marginLeft: 60,
   },
   root2: {
     display: 'flex',
@@ -36,8 +37,8 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'left',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
-    maxWidth: 300,
-    minWidth: 300,
+    maxWidth: 250,
+    minWidth: 250,
     marginRight: 50,
     marginBottom: 16,
   },

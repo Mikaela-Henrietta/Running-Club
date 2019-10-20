@@ -20,7 +20,7 @@ const styles = (theme) => ({
     alignItems: 'center',
   },
   h1: {
-    marginTop: 35,
+    marginTop: 20,
     color: '#366453',
     fontSize: 40,
     [theme.breakpoints.up('sm')]: {
@@ -40,13 +40,13 @@ const styles = (theme) => ({
     flexDirection: 'row',
   },
   link: {
-    padding: 20,
+    padding: 15,
     fontSize: 20,
   },
   infoButtonDiv: {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: 100,
+    marginTop: 75,
     fontSize: 23,
   },
   infoButton: {
