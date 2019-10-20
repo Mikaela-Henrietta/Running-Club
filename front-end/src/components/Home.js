@@ -11,8 +11,11 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    padding:20,
-    margin: 100,
+    padding: 16,
+     marginTop: 100,
+    marginLeft: 16,
+    marginRight: 16,
+    maxWidth:900,
     textAlign: 'justify',
     [theme.breakpoints.up('sm')]: {
       marginLeft: drawerWidth,
@@ -59,8 +62,8 @@ class Info extends Component {
           </SideBar>
         </div>
         <div className={classes.root2}>
-          <Typography component='h6' variant='h5'>Lorem ipsum dolor</Typography>
-          <Typography  variant="body1">
+          <Typography component='h6' variant='h5'>Lorem</Typography>
+          <Typography  variant="body2">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 

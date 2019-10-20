@@ -34,11 +34,12 @@ const styles = theme => ({
   paper: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'left',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
     maxWidth: 300,
-    minWidth: 250,
+    minWidth: 300,
     marginRight: 50,
+    marginBottom: 16,
   },
   form: {
     width: '100%', 
@@ -46,8 +47,8 @@ const styles = theme => ({
   },
   submit: {
     marginTop: theme.spacing.unit * 3,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
 
   },
   buttons: {  
@@ -59,12 +60,12 @@ const styles = theme => ({
     justifyContent: 'center',
     marginTop: 80,
   },
-  paperDiv: {
+   paperDiv: {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
-  },
+  }, 
   infoButton: {
     color: '#421e1c',
   },
@@ -124,12 +125,12 @@ class Members extends Component {
         return fee.month === thisMonth
       })
       if (hasPayd) {
-        return (<h5 style={{color: 'green'}}>User has payed this month fee</h5>)
+        return (<h5 style={{color: 'green', fontWeight: 150,}}>No pending fee! </h5>)
       } else {
-        return (<h5 style={{color: 'red'}}>User has not payed this month fee!</h5>)
+        return (<h5 style={{color: 'red', fontWeight: 150}}>Has not paid monthly fee!</h5>)
       }
     } else {
-      return (<h5 style={{color: 'red'}}>User has not payed this month fee!</h5>)
+      return (<h5 style={{color: 'red', fontWeight: 150}}>Has not paid monthly fee!</h5>)
     }
   }
 
@@ -180,7 +181,7 @@ class Members extends Component {
       if (this.props.currentUser.role === 'admin') {
         return (
           <div>
-            <h4>{user.username}</h4>
+            <h4 style={{fontWeight: 300}}>{user.username}</h4>
             {this.userHasPayedMonthlyFee(user)}
             <Button
               type="button"
@@ -191,8 +192,8 @@ class Members extends Component {
             </Button>
             <Button
               type="button"
-              variant="contained"
-              style= {{backgroundColor:'#366453',color:'#FFFFFF', marginLeft: 16}}
+              variant="outlined"
+              style= {{ color: '#366453',marginLeft: 16}}
               onClick={() => {
                 this.setState({editableUser: user})}
               }
@@ -212,7 +213,7 @@ class Members extends Component {
     if (this.props.currentUser.role === 'admin') {
       return (
         <Paper className={classes.paper}>
-          <Typography component="h1" variant="h5">
+          <Typography style={{color:'#366453'}} component="h1" variant="h5">
             New user
           </Typography>
           <form className={classes.form}
@@ -232,7 +233,7 @@ class Members extends Component {
                 style= {{backgroundColor:'#366453',color:'#FFFFFF'}}
                 className={classes.submit}
                 >
-                Submit
+                Add
               </Button>
             </div>
           </form>
@@ -253,7 +254,7 @@ class Members extends Component {
           <div className={classes.root2}>
             <div className={classes.paperDiv}>
               <Paper className={classes.paper}>
-                <Typography component='h5' variant='h5'>Members </Typography>
+                <Typography style={{color:'#366453'}} component='h5' variant='h5'>Members </Typography>
                 {this.props.users.map((user) => (
                   <div key={user._id}>
                     {this.editUserView(user)}

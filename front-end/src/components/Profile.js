@@ -16,20 +16,13 @@ import { updateUserAction, deleteUserAction } from "../redux/actions";
 
 const drawerWidth = 240;
 const styles = theme => ({
-  root: {
-    //background: '#e2dad5',
-  },
   root2: {
-     display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    marginTop: 200, 
-  },
+    marginTop: 150, 
+  }, 
   
   button: {  
     margin: 5,
-    backgroundColor:'#366453',
-    color: '#FFFFFF',
+    color: '#366453',
     maxWidth: 100,
   },
   appBar: {
@@ -47,7 +40,8 @@ const styles = theme => ({
     },
     flexDirection: 'column',
     maxWidth:500,
-    minWidth:500,
+    marginLeft: 10,
+    marginRight: 10,
     alignItems: 'center',
   },
   textField: {
@@ -61,9 +55,9 @@ const styles = theme => ({
   deleteAccount: {
     display: 'flex',
     marginTop: 100,
-    marginLeft: 'auto',
     width: '100%',
-    maxWidth: '350px'
+    maxWidth: '350px',
+    marginLeft: 'auto'
   },
   buttons: {
     display: 'flex',
@@ -139,7 +133,7 @@ class Profile extends Component {
       })
       if (hasPayd) {
         return (
-          <h2 >You have payed your monthly fee!</h2>
+          <h2 style={{color: '#20667a', fontWeight: 250}} className={classes.container}>No pending fees!</h2>
         )
       } else {
         return (
@@ -154,7 +148,13 @@ class Profile extends Component {
                 margin="normal"
                 variant="filled"
               />
-            <Button type="button" variant="contained" style= {{backgroundColor:'#366453',color:'#FFFFFF', marginBottom: 50, marginLeft: 'auto'}} onClick={this.payFee}>pay</Button>
+            <Button 
+              type="button" 
+              variant="contained" 
+              style= {{backgroundColor:'#366453',color:'#FFFFFF', marginBottom: 50, marginLeft: 'auto'}} 
+              onClick={this.payFee}>
+              pay
+              </Button>
           </div>
         )
       }
@@ -196,16 +196,26 @@ class Profile extends Component {
               helperText="Your new password"
             />
             <div className={classes.buttons}>
-              <Button type="button" style={{margin: 5,}}>Cancel</Button>
-              <Button type="button" className={classes.button} variant="contained" onClick={this.updateUser}> Save</Button>
+              <Button type="button" style={{margin: 5,color: '#366453'}}>Cancel</Button>
+              <Button 
+                type="button" 
+                className={classes.button} 
+                variant="outlined" 
+                onClick={this.updateUser}> 
+                Save
+              </Button>
             </div>
             <div className={classes.deleteAccount}>
               <Typography component='h6' variant='subtitle1'>Removes your user account permanently </Typography>
               <WarningIcon style={{marginLeft: '10', color:'red'}}/>
             </div>
-            <Button style={{marginTop: 20,backgroundColor: '#366453', color: '#FFFFFF', }} variant="contained" onClick={this.deleteUserAccount}>Delete your account </Button>
+            <Button 
+              style={{marginTop: 20,backgroundColor: '#FFFFFF', color: 'red', marginLeft: 'auto' }} 
+              variant="outlined" 
+              onClick={this.deleteUserAccount}>
+              Delete your account 
+            </Button>
           </form>
-          
         </div>
       </div>
     );
