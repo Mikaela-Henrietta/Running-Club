@@ -27,8 +27,6 @@ const styles = theme => ({
   },
   
   button: {  
-    marginLeft: 'auto',
-    marginLeft: 5,
     margin: 5,
     backgroundColor:'#366453',
     color: '#FFFFFF',
@@ -51,7 +49,6 @@ const styles = theme => ({
     maxWidth:500,
     minWidth:500,
     alignItems: 'center',
-    flexDirection: 'column',
   },
   textField: {
     marginLeft: 'auto',

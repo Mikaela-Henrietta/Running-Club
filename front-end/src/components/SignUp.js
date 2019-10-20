@@ -9,7 +9,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Paper from '@material-ui/core/Paper';
 import Input from '@material-ui/core/Input';
 import { Link } from 'react-router-dom';
-import Header from './Header.js';
 import { connect } from "react-redux";
 
 import { addUserAction, authenticateAction } from "../redux/actions";
@@ -20,7 +19,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    marginTop: 150,
+    //marginTop: 150,
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
@@ -43,11 +42,6 @@ const styles = theme => ({
   buttons: {  
     float: 'right',
     margin: 5,
-  },
-  infoButtonDiv: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: 50,
   },
   paperDiv: {
     display: 'flex',
@@ -92,15 +86,7 @@ class SignUp extends Component {
     return (
      
       <div>
-        <div>
-          <Header title='Runners Club'/>  
-        </div>
         <div className={classes.root2}>
-          <div className={classes.infoButtonDiv}>
-            <Link  className={classes.infoButton} to={'/home'}>
-              Explore Runners Club!
-            </Link>
-          </div>
           <div className={classes.paperDiv}>
             <Paper className={classes.paper}>
               <Typography component="h1" variant="h5">
@@ -108,12 +94,12 @@ class SignUp extends Component {
               </Typography>
               <form className={classes.form}
                   onSubmit={this.onSubmit }>
-                <FormControl margin="normal" required fullWidth>
-                  <InputLabel htmlFor="username">Name</InputLabel>
-                  <Input id="username" name="username"  autoFocus />
+                <FormControl  margin="normal" required fullWidth>
+                  <InputLabel style={{color:'#366453'}} htmlFor="username">Name</InputLabel>
+                  <Input  id="username" name="username"  autoFocus />
                 </FormControl>
                 <FormControl margin="normal" required fullWidth>
-                  <InputLabel htmlFor="password">Password</InputLabel>
+                  <InputLabel style={{color:'#366453'}} htmlFor="password">Password</InputLabel>
                   <Input name="password" type="password" id="password"/>
                 </FormControl>
                 <div className={classes.buttons}>
@@ -121,9 +107,9 @@ class SignUp extends Component {
                     type="button"
                     style= {{color:'#366453'}}
                     className={classes.submit}
-                    component={Link} to="/login"
+                    component={Link} to="/"
                   >
-                    Login
+                    Cancel
                   </Button>
                   <Button
                     type="submit"
@@ -144,6 +130,7 @@ class SignUp extends Component {
 }
 SignUp.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => ({

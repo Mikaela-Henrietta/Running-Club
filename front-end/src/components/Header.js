@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import MenuIcon from '@material-ui/icons/Menu';
 import ArrowIcon from '@material-ui/icons/KeyboardArrowLeft';
 import { Link } from 'react-router-dom';
-import SideBar from './SideBar.js';
+
 
 
 const styles = theme => ({
