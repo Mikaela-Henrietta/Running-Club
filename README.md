@@ -22,7 +22,7 @@ Ability to log in as a mockup user.
     
 The user can edit their own details and pay a monthly fee.
 
-Create new accaunt:
+Create new account:
 Name can be what ever and password has to be atleast 5 characters.
 
 If you are not a registered user you can only see the homepage and the training programs page.
