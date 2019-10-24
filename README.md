@@ -25,5 +25,5 @@ The user can edit their own details and pay a monthly fee.
 Create new account:
 Name can be what ever and password has to be atleast 5 characters.
 
-If you are not a registered user you can only see the homepage and the training programs page.
+If you are not a registered user you can only see the homepage and the training plans page.
 
