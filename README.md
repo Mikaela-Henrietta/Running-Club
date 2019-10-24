@@ -3,7 +3,7 @@ Course assignment of the www-programming course.
 React, Redux, NodeJS, MongoDB 
 https://polar-dawn-08844.herokuapp.com/
 
-Log in as admin:
+Log in as admin.
 username: admin
 password:admin
 
