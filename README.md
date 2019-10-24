@@ -1,6 +1,6 @@
 # Running-Club
 Course assignment of the www-programming course. 
-React, Redux, NodeJS, Mongoose, REST API, 
+React, Redux, NodeJS, MongoDB 
 https://polar-dawn-08844.herokuapp.com/
 
 Log in as admin:
